@@ -37,11 +37,9 @@ type Birder interface {
 
 type Bird struct {
   Animal
-  Flying bool
 }
 
 func (b *Bird) Fly() {
-  b.Flying = true
   fmt.Printf("%s is flying!\n", b.Name)
 }
 
