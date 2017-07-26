@@ -1,4 +1,4 @@
-# golang_inheritance_notes
+# Golang inheritance notes
 
 You can fake a sort of inheritance in Golang as follows.
 
