@@ -4,7 +4,7 @@ You can fake a sort of inheritance in Golang as follows.
 
 Make each "class" (really a struct typedef) have a corresponding interface. The "class" implements all the methods of the interface.
 
-You can create a "subclass" by embedding the class in a new type, which also has its own interface with additional methods if desired. The new "subclass" must now implement all the additional methods of the new interface, but it can also override methods of its parent class.
+You can create a "subclass" by embedding the class in a new type, which should also have its own interface (with additional methods if desired). The new "subclass" must now implement all those additional methods, but it can also override methods of its parent class.
 
 You can check whether a "class" is a subclass of something by type-asserting on the interfaces (NOT on the concrete types).
 
