@@ -14,6 +14,8 @@ package main
 
 import "fmt"
 
+// ------------------------
+
 type Animaler interface {
   Speak()
 }
@@ -26,6 +28,13 @@ func (a *Animal) Speak()  {
   fmt.Println("ill-defined mumblings")
 }
 
+// ------------------------
+
+type Birder interface {
+  Animaler
+  Fly()
+}
+
 type Bird struct {
   Animal
   Flying bool
@@ -35,10 +44,7 @@ func (b *Bird) Fly() {
   b.Flying = true
 }
 
-type Birder interface {
-  Animaler
-  Fly()
-}
+// ------------------------
 
 type Parrot struct {
   Bird
@@ -59,12 +65,16 @@ func NewParrot() *Parrot {
   return &ret
 }
 
+// ------------------------
+
 func NewSquirrel() *Animal {
   ret := Animal{
     Name: "Jimmy",
   }
   return &ret
 }
+
+// ------------------------
 
 func main() {
 
