@@ -10,6 +10,7 @@ You can check whether a "class" is a subclass of something by type-asserting the
 
 ```golang
 
+
 package main
 
 import "fmt"
@@ -25,7 +26,7 @@ type Animal struct {
 }
 
 func (a *Animal) Speak()  {
-  fmt.Println("ill-defined mumblings")
+  fmt.Printf("%s says: <ill-defined mumblings>\n", a.Name)
 }
 
 // ------------------------
@@ -42,6 +43,7 @@ type Bird struct {
 
 func (b *Bird) Fly() {
   b.Flying = true
+  fmt.Printf("%s is flying!\n", b.Name)
 }
 
 // ------------------------
@@ -51,7 +53,7 @@ type Parrot struct {
 }
 
 func (p *Parrot) Speak() {
-  fmt.Println("Squawk!")
+  fmt.Printf("%s says: Squawk!\n", p.Name)
 }
 
 func NewParrot() *Parrot {
