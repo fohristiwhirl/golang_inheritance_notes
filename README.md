@@ -6,7 +6,7 @@ Make each "class" (really a struct typedef) have a corresponding interface. The 
 
 You can create a "subclass" by embedding the class in a new type, which also has its own interface with additional methods if desired. The new "subclass" must now implement all the additional methods of the new interface, but it can also override methods of its parent class.
 
-You can check whether a "class" is a subclass of something by type-asserting the interfaces.
+You can check whether a "class" is a subclass of something by type-asserting on the interfaces (NOT on the concrete types.)
 
 ```golang
 
