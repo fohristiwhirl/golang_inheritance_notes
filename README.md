@@ -10,7 +10,6 @@ You can check whether a "class" is a subclass of something by type-asserting on 
 
 ```golang
 
-
 package main
 
 import "fmt"
@@ -83,13 +82,22 @@ func main() {
   var parrot Animaler = NewParrot()
   
   parrot.Speak()
-  p, ok := parrot.(Birder); if ok {
-    p.Fly()
+  
+  tmp, ok := parrot.(Birder); if ok {
+    tmp.Fly()
+  } else {
+    fmt.Printf("This thing can't fly\n")
   }
   
   var squirrel Animaler = NewSquirrel()
   
   squirrel.Speak()
+  
+  tmp, ok = squirrel.(Birder); if ok {
+    tmp.Fly()
+  } else {
+    fmt.Printf("This thing can't fly\n")
+  }
 }
 
 ```
